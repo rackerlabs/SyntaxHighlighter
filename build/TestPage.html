@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:exsl="http://exslt.org/common" xmlns:ng="http://docbook.org/docbook-ng" xmlns:fb="http://ogp.me/ns/fb#"><head>
+<meta http-equiv="X-UA-Compatible" content="IE=7"/>
+<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css"/>
+<script type="text/javascript" src="scripts/shCore.js"><!----></script>
+<script type="text/javascript" src="scripts/shBrushXml.js"><!----></script>
+<script type="text/javascript" src="scripts/shBrushJSON.js"><!----></script>
+<script type="text/javascript" src="scripts/shBrushJScript.js"><!----></script>
+<script type="text/javascript" src="scripts/shBrushScala.js"><!----></script>
+<script type="text/javascript" src="scripts/shBrushBash.js"><!----></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<title>3.1. Authentication - Cloud DNS Developer Guide
+   - API v1.0</title><meta name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/><link rel="home" href="index.html" title="Cloud DNS Developer Guide"/><link rel="up" href="General_API_Information-d1e633.html" title="Chapter 3. General API Information"/><link rel="prev" href="General_API_Information-d1e633.html" title="Chapter 3. General API Information"/><link rel="next" href="Service_Access_Endpoints-d1e753.html" title="3.2. Service Access/Endpoints"/><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><script type="text/javascript">
+            //The id for tree cookie
+            var treeCookieId = "treeview-5411";
+            var language = "en";
+            var w = new Object();
+            //Localization
+            txt_filesfound = 'Results';
+            txt_enter_at_least_1_char = "You must enter at least one character.";
+            txt_browser_not_supported = "Your browser is not supported. Use of Mozilla Firefox is recommended.";
+            txt_please_wait = "Please wait. Search in progress...";
+            txt_results_for = "Results for: ";
+        </script><style type="text/css">
+            input {
+            margin-bottom: 5px;
+            margin-top: 2px;
+            }
+
+            .folder {
+            display: block;
+            height: 22px;
+            padding-left: 20px;
+            background: transparent url(../common/jquery/treeview/images/folder.gif) 0 0px no-repeat;
+            }
+            
+        </style><link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/><link rel="stylesheet" type="text/css" href="../common/css/positioning.css"/><link rel="stylesheet" type="text/css" href="../common/css/custom.css"/><link href="../atom.xml" type="application/atom+xml" rel="alternate" title="Document ATOM Feed"/><link rel="canonical" href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/Authentication-d1e647.html"/><!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="../common/css/ie.css"/>
+	<![endif]--><link rel="stylesheet" type="text/css" href="../common/jquery/theme-redmond/jquery-ui-1.8.2.custom.css"/><link rel="stylesheet" type="text/css" href="../common/jquery/treeview/jquery.treeview.css"/><script type="text/javascript" src="../common/jquery/jquery-1.4.3.min.js"><!----></script><script type="text/javascript" src="../common/jquery/jquery-ui-1.8.2.custom.min.js"><!----></script><script type="text/javascript" src="../common/jquery/jquery.cookie.js"><!----></script><script type="text/javascript" src="../common/jquery/treeview/jquery.treeview.min.js"><!----></script><script type="text/javascript" src="../common/jquery/jquery.qtip-1.0.0-rc3/jquery.qtip-1.0.0-rc3.min.js"><!--jQuery plugin for glossary popups. --></script><script type="text/javascript" src="search/htmlFileList.js"><!----></script><script type="text/javascript" src="search/htmlFileInfoList.js"><!----></script><script type="text/javascript" src="search/nwSearchFnt.js"><!----></script><script type="text/javascript" src="search/stemmers/en_stemmer.js"><!--//make this scalable to other languages as well.--></script><script type="text/javascript" src="search/index-1.js"><!----></script><script type="text/javascript" src="search/index-2.js"><!----></script><script type="text/javascript" src="search/index-3.js"><!----></script><script type="text/javascript">
+	    var _gaq = _gaq || [];
+	    _gaq.push(['_setAccount', 'UA-23102455-4']);
+	  </script><script type="text/javascript" src="../common/ga.js"><!----></script><script type="text/javascript" src="http://www.tabpress.com/_js/ga_social_tracking.js"><!----></script><script>
+	    (function(){var twitterWidgets = document.createElement('script');
+        twitterWidgets.type = 'text/javascript';
+        twitterWidgets.async = true;
+        twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+        // Setup a callback to track once the script loads.
+        twitterWidgets.onload = _ga.trackTwitter;
+        document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+        })();
+      </script></head>
+      <body>
+      <div xmlns:g="http://www.google.com" id="header"><a onclick="_gaq.push(['_trackEvent', 'Header', 'logo', 'click', 1]);" target="_blank" href="http://www.rackspace.com">
+      <img src="../common/images/rackspace-logo.png" alt="Rackspace Documentation" width="157" height="47"/></a>
+      <h1>3.1. Authentication</h1><div id="navheader" align="right"><!----><table class="navLinks"><tr><td><a id="showHideButton" onclick="showHideToc(); _gaq.push(['_trackEvent', 'Header', 'show/hide', 'click', 1]);" class="pointLeft" title="Hide TOC tree">Sidebar
+                            </a></td>
+                            <td><a accesskey="p" class="navLinkPrevious" onclick="_gaq.push(['_trackEvent', 'Header', 'prevLink', 'click', 1]);" tabindex="5" href="General_API_Information-d1e633.html">Prev</a>
+				      |
+                                        <a accesskey="u" class="navLinkUp" onclick="_gaq.push(['_trackEvent', 'Header', 'upLink', 'click', 1]);" tabindex="5" href="General_API_Information-d1e633.html">Up</a>
+				  |
+                                    <a accesskey="n" class="navLinkNext" onclick="_gaq.push(['_trackEvent', 'Header', 'nextLink', 'click', 1]);" tabindex="5" href="Service_Access_Endpoints-d1e753.html">Next</a></td></tr></table></div></div><div xmlns:g="http://www.google.com" id="toolbar" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all"><div id="toolbar-left"><p class="breadcrumbs"><a href="http://docs.rackspace.com/api/">Rackspace Manuals</a><a href="index.html">Cloud DNS Developer Guide
+   - API v1.0</a></p><a onclick="_gaq.push(['_trackEvent', 'Header', 'pdfDownload', 'click', 1]);" alt="Download a pdf of this document" class="pdficon" href="../../../cdns-devguide-latest.pdf"><img src="../common/images/pdf.png"/></a>
+       
+      <a href="../atom.xml"><img alt="Atom feed of this document" src="../common/images/feed-icon.png"/></a></div></div><div id="content"><div class="statustext"> </div><div class="section"><div class="titlepage"><div><div><h2 xmlns="http://www.w3.org/1999/xhtml" class="title" style="clear: both"><a id="Authentication-d1e647"/>3.1. Authentication</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="Authentication-d1e647.html#request">3.1.1. Geographic Endpoints</a></span></dt><dt><span class="section"><a href="Authentication-d1e647.html#Authenticate-d1e171">3.1.2. Retrieving the Authentication Token</a></span></dt></dl></div><p> Every ReST request against the DNS Service requires
+                the inclusion of a specific authorization token,
+                supplied by the <code class="code">X-Auth-Token</code> HTTP header.
+                Customers obtain this token by first using the
+                Rackspace Cloud Authentication Service and supplying a
+                valid username and API access key. </p><div class="section"><div class="titlepage"><div><div><h3 xmlns="http://www.w3.org/1999/xhtml" class="title"><a id="request"/>3.1.1. Geographic Endpoints</h3></div></div></div><p> The Rackspace Cloud Authentication Service
+                    serves as the entry point to all Rackspace Cloud
+                    APIs and is itself a ReSTful web service. </p><p> To access the Authentication Service, you must know whether your account is
+                    US-based or UK-based: 
+                </p><div class="itemizedlist"><ul class="itemizedlist" type="disc" compact="compact"><li class="listitem"><p>
+                            US-based accounts authenticate through <a class="link" href="https://auth.api.rackspacecloud.com/v1.1" target="_top">https://auth.api.rackspacecloud.com/v1.1</a>.
+                        </p></li><li class="listitem"><p>
+                            UK-based accounts authenticate through <a class="link" href="https://lon.auth.api.rackspacecloud.com/v1.1" target="_top">https://lon.auth.api.rackspacecloud.com/v1.1</a>.
+                        </p></li></ul></div><p>
+                    Your account may be based in either the US or the UK; this is not determined
+                    by your physical location but by the location of the Rackspace retail site which
+                    was used to create your account: 
+                </p><div class="itemizedlist"><ul class="itemizedlist" type="disc" compact="compact"><li class="listitem"><p>
+                            If your account was
+                            created via <a class="link" href="http://www.rackspacecloud.com" target="_top">http://www.rackspacecloud.com</a>, it is a US-based account.
+                        </p></li><li class="listitem"><p>
+                            If your account was
+                            created via <a class="link" href="http:/www.rackspace.co.uk" target="_top">http:/www.rackspace.co.uk</a>, it is a UK-based account.
+                        </p></li></ul></div><p>
+                    If you are unsure how your account was created, use the Rackspace contact
+                    information at either site to ask for help.
+                </p></div><div class="section"><div class="titlepage"><div><div><h3 xmlns="http://www.w3.org/1999/xhtml" class="title"><a id="Authenticate-d1e171"/>3.1.2. Retrieving the Authentication Token</h3></div></div></div><table rules="all" id="d6e200"><thead><tr>
+                            <td>Verb</td>
+                            <td>URI</td>
+                            <td colspan="4">Description</td>
+                        </tr></thead><tbody><tr>
+                            <td><span class="command"><strong>POST</strong></span>
+                            </td>
+                            <td>/auth</td>
+                            <td colspan="4">
+                                Authenticate to receive a token and a service catalog.
+                            </td>
+                        </tr></tbody></table><p>
+                    Normal Response Code(s): <span class="returnvalue">200</span>,
+                    <span class="returnvalue">203</span>
+                </p><p>
+                    Error Response Code(s):
+                    unauthorized (<span class="errorcode">401</span>),
+                    userDisabled (<span class="errorcode">403</span>),
+                    badRequest (<span class="errorcode">400</span>),
+                    authFault (<span class="errorcode">500</span>),
+                    serviceUnavailable (<span class="errorcode">503</span>)
+                </p><p>
+                    The authenticate operation provides clients with an
+                    authentication token and a list of regional cloud endpoints.
+                </p>
+                <div class="example"><a id="d6e222"/>
+                <p class="title"><strong>Example 3.1. Auth Request: XML</strong></p>
+                <div class="example-contents">
+                <div class="programlistingco"><pre class="programlisting  brush:xml">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+
+&lt;credentials xmlns="http://docs.rackspacecloud.com/auth/api/v1.1"
+             username="hub_cap" <span class="co" id="5 23"><img src="../common/images/callouts/1.png" alt="(1)"/></span>
+
+                        </pre></div></div></div><br class="example-break"/><div class="example"><a id="d6e229"/><p class="title"><strong>Example 3.2. Auth Request: JSON</strong></p><div class="example-contents"><div class="programlistingco"><pre class="programlisting brush: json">
+{
+    "credentials":{
+        "username":"hub_cap" <span class="co" id="4 20"><img src="../common/images/callouts/1.png" alt="(1)"/></span>,
+        "key":"a86850deb2742ec3cb41518e26aa2d89" <span class="co" id="5 15"><img src="../common/images/callouts/2.png" alt="(2)"/></span>
+    }
+}
+
+                        </pre></div></div></div><br class="example-break"/><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><img src="../common/images/callouts/1.png" alt="1" border="0"/></p></td><td valign="top" align="left"><p>
+                            The username supplied here is your common Rackspace Cloud
+                            username.
+                        </p></td></tr><tr><td width="5%" valign="top" align="left"><p><img src="../common/images/callouts/2.png" alt="2" border="0"/></p></td><td valign="top" align="left"><p> The key is your API access key. The key
+                            can be obtained from the Rackspace Cloud
+                            Control Panel in the <span class="guimenu"><strong>Your
+                                Account</strong></span> / <span class="guimenuitem"><strong>API
+                                Access</strong></span> section. </p></td></tr></table></div>
+                                <div class="example"><a id="d6e243"/>
+                                
+                                <p class="title"><strong>Example 3.3. Auth Response: XML</strong></p>
+                                </div>
+                        <br class="example-break"/>
+                        <div class="example"><a id="d6e254"/>
+                        <p class="title">
+                        <strong>Example 3.4. Auth Response: JSON</strong></p>
+                        
+                        <div class="example-contents"><div class="programlistingco">
+                        </div></div></div><br class="example-break"/><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><img src="../common/images/callouts/1.png" alt="1" border="0"/></p></td><td valign="top" align="left"><p> Tokens are valid for a finite duration. The <code class="code">expires</code>
+                            attribute denotes the time after which the token will automatically become
+                            invalid. A token may be manually revoked before the time identified by the
+                            <code class="code">expires</code> attribute; <code class="code">expires</code> predicts a token's maximum possible lifespan but does not guarantee that it will reach that lifespan. 
+                            Clients are encouraged to cache a
+                            token until it expires. </p></td></tr><tr><td width="5%" valign="top" align="left"><p><img src="../common/images/callouts/2.png" alt="2" border="0"/></p></td><td valign="top" align="left"><p>
+                            A service may expose endpoints in different regions.
+                            Regional endpoints allow clients to provision resources in
+                            a manner that provides high availability.
+                        </p></td></tr><tr><td width="5%" valign="top" align="left"><p><img src="../common/images/callouts/3.png" alt="3" border="0"/></p></td><td valign="top" align="left"><p> The <code class="code">v1Default</code> attribute
+                            denotes that an endpoint is being returned
+                            in version 1.0 of the Cloud Authentication
+                            Service. The default value of
+                                <code class="code">v1Default</code> is
+                                <code class="code">false</code>; clients should
+                            assume the value is <code class="code">false</code>
+                            when the attribute is missing. Auth 1.0
+                            does not offer support for regional
+                            endpoints and therefore only returns one
+                            endpoint per service. Resources stored in
+                            endpoints where <code class="code">v1Default</code> is
+                                <code class="code">false</code> will not be seen by
+                            Auth 1.0 clients. </p></td></tr><tr><td width="5%" valign="top" align="left"><p><img src="../common/images/callouts/4.png" alt="4" border="0"/><img src="../common/images/callouts/5.png" alt="5" border="0"/></p></td><td valign="top" align="left"><p>
+                            An endpoint can be assigned public and internal URLs. A
+                            public URL is accessible from anywhere. Access to a public
+                            URL usually incurs traffic charges. Internal URLs are only
+                            accessible to services within the same region. Access to
+                            an internal URL is free of charge.
+                        </p></td></tr><tr><td width="5%" valign="top" align="left"><p><img src="../common/images/callouts/6.png" alt="6" border="0"/></p></td><td valign="top" align="left"><p> Some services are not region-specific. These services supply a single
+                            non-regional endpoint and do not provide access to internal URLs. </p></td></tr></table></div></div></div><script xmlns:g="http://www.google.com" type="text/javascript" src="../common/main.js"><!----></script><hr xmlns:g="http://www.google.com"/><div xmlns:g="http://www.google.com" id="disqus_thread"><script type="text/javascript">
+	      var disqus_shortname = 'rc-api-docs';
+	      
+	      var disqus_identifier = 'cdns-devguideAuthentication-d1e647';
+	      </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><script type="text/javascript" src="../common/comments.js"><!----></script></div><hr xmlns:g="http://www.google.com"/><div xmlns:g="http://www.google.com" class="legal"><a href="index.html">Legal notices</a></div></div><div xmlns:g="http://www.google.com"><div id="leftnavigation" style="padding-top:3px; background-color:white;"><div id="tabs"><ul><li><a href="#treeDiv" tabindex="1"><span class="contentsTab">Contents</span></a></li><li><a href="#searchDiv" tabindex="1"><span class="searchTab">Search</span></a></li></ul><div id="treeDiv"><img src="../common/images/loading.gif" alt="loading table of contents..." id="tocLoading" style="display:block;"/><div id="ulTreeDiv" style="display:none" class="thisisthat"><ul id="tree" class="filetree"><li tabindex="2"><span class="file"><a href="overview.html">1. Overview</a></span><ul><li tabindex="2"><span class="file"><a href="Intended_Audience-d1e122.html">1.1. Intended Audience</a></span></li><li tabindex="2"><span class="file"><a href="Document_Change_History-d1e166.html">1.2. Document Change History</a></span></li><li tabindex="2"><span class="file"><a href="Additional_Resources-d1e532.html">1.3. Additional Resources</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="Concepts-d1e563.html">2. Concepts</a></span><ul><li tabindex="2"><span class="file"><a href="Concepts-d1e563.html#DNS-d1e573">2.1. DNS</a></span></li><li tabindex="2"><span class="file"><a href="Concepts-d1e563.html#Domain-d1e588">2.2. Domain</a></span></li><li tabindex="2"><span class="file"><a href="Concepts-d1e563.html#subdomain">2.3. Subdomain</a></span></li><li tabindex="2"><span class="file"><a href="Concepts-d1e563.html#Record-d1e607">2.4. Record</a></span></li><li tabindex="2"><span class="file"><a href="Concepts-d1e563.html#Domain_Owner-d1e616">2.5. Domain Owner</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="General_API_Information-d1e633.html">3. General API Information</a></span><ul><li tabindex="2" id="webhelp-currentid"><span class="file"><a href="Authentication-d1e647.html">3.1. Authentication</a></span><ul><li tabindex="2"><span class="file"><a href="Authentication-d1e647.html#request">3.1.1. Geographic Endpoints</a></span></li><li tabindex="2"><span class="file"><a href="Authentication-d1e647.html#Authenticate-d1e171">3.1.2. Retrieving the Authentication Token</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="Service_Access_Endpoints-d1e753.html">3.2. Service Access/Endpoints</a></span></li><li tabindex="2"><span class="file"><a href="DNS_service_versions.html">3.3. DNS Service Versions</a></span><ul><li tabindex="2"><span class="file"><a href="Contract_Version-d1e825.html">3.3.1. Contract Version</a></span></li><li tabindex="2"><span class="file"><a href="API_Version_Headers-d1e855.html">3.3.2. API Version Headers</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="Request_Response_Types-d1e903.html">3.4. Request/Response Types</a></span></li><li tabindex="2"><span class="file"><a href="sync_asynch_responses.html">3.5. Synchronous and Asynchronous Responses</a></span><ul><li tabindex="2"><span class="file"><a href="viewing_status_all_asynch_jobs.html">3.5.1. Viewing Status of All Asynchronous Job
+                    Requests</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="Content_Compression-d1e1120.html">3.6. Content Compression</a></span></li><li tabindex="2"><span class="file"><a href="Persistent_Connections-d1e1187.html">3.7. Persistent Connections</a></span></li><li tabindex="2"><span class="file"><a href="Limits-d1e1208.html">3.8. Limits</a></span><ul><li tabindex="2"><span class="file"><a href="Rate_Limits-d1e1222.html">3.8.1. Rate Limits</a></span></li><li tabindex="2"><span class="file"><a href="Absolute_Limits-d1e1397.html">3.8.2. Absolute Limits</a></span><ul><li tabindex="2"><span class="file"><a href="Domain_Limits.html">3.8.2.1. Domain Limits</a></span></li><li tabindex="2"><span class="file"><a href="Record_Limits.html">3.8.2.2. Record Limits</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="view_limits_ov.html">3.8.3. Viewing Current Limits</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="datetimeformat.html">3.9. Date/Time Format</a></span></li><li tabindex="2"><span class="file"><a href="comments.html">3.10. Comments</a></span></li><li tabindex="2"><span class="file"><a href="pagination.html">3.11. Pagination</a></span><ul><li tabindex="2"><span class="file"><a href="Pagination_Elements_and_Attributes-d1e1754.html">3.11.1. Pagination Elements and Attributes</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="supported_record_types.html">3.12. Supported Record Types</a></span></li><li tabindex="2"><span class="file"><a href="DNS_faults.html">3.13. Faults</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="API_Operations-d1e2264.html">4. API Operations</a></span><ul><li tabindex="2"><span class="file"><a href="view_limits.html">4.1. Limits</a></span><ul><li tabindex="2"><span class="file"><a href="List_All_Limits.html">4.1.1. List All Limits</a></span></li><li tabindex="2"><span class="file"><a href="List_Limit_Types.html">4.1.2. List Limit Types</a></span></li><li tabindex="2"><span class="file"><a href="List_Specific_Limit.html">4.1.3. List Specific Limit</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="Domains.html">4.2. Domains</a></span><ul><li tabindex="2"><span class="file"><a href="list_domains.html">4.2.1. List Domains</a></span><ul><li tabindex="2"><span class="file"><a href="search_domains_w_filters.html">4.2.1.1. Search Domains with Filtering</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="list_domain_details.html">4.2.2. List Domain Details</a></span></li><li tabindex="2"><span class="file"><a href="List_Domain_Changes.html">4.2.3. List Domain Changes</a></span></li><li tabindex="2"><span class="file"><a href="export_domain.html">4.2.4. Export Domain</a></span></li><li tabindex="2"><span class="file"><a href="create_domains.html">4.2.5. Create Domain(s)</a></span></li><li tabindex="2"><span class="file"><a href="import_domain.html">4.2.6. Import Domain</a></span></li><li tabindex="2"><span class="file"><a href="Modify_Domain_s_-d1e3848.html">4.2.7. Modify Domain(s)</a></span></li><li tabindex="2"><span class="file"><a href="Remove_Domain_s_-d1e4022.html">4.2.8. Remove Domain(s)</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="using_subdomains.html">4.3. Subdomains</a></span><ul><li tabindex="2"><span class="file"><a href="List_Subdomains-d1e4295.html">4.3.1. List Subdomains</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="Records-d1e4435.html">4.4. Records</a></span><ul><li tabindex="2"><span class="file"><a href="List_Records-d1e4629.html">4.4.1. List Records</a></span></li><li tabindex="2"><span class="file"><a href="List_Record_Details-d1e4770.html">4.4.2. List Record Details</a></span></li><li tabindex="2"><span class="file"><a href="Add_Records-d1e4895.html">4.4.3. Add Records</a></span><ul><li tabindex="2"><span class="file"><a href="Wildcard_Records.html">4.4.3.1. Wildcard Records</a></span><ul><li tabindex="2"><span class="file"><a href="Wildcard_Resolution.html">4.4.3.1.1. Wildcard Record Resolution</a></span></li></ul></li></ul></li><li tabindex="2"><span class="file"><a href="Modify_Records-d1e5033.html">4.4.4. Modify Records</a></span></li><li tabindex="2"><span class="file"><a href="Remove_Records-d1e5188.html">4.4.5. Remove Records</a></span></li></ul></li></ul></li></ul></div></div><div id="searchDiv"><div id="search"><form onsubmit="Verifie(ditaSearch_Form);return false" name="ditaSearch_Form" class="searchForm"><fieldset class="searchFieldSet"><legend>Search</legend><center><input id="textToSearch" name="textToSearch" type="text" class="searchText"/> &nbsp; <input onclick="Verifie(ditaSearch_Form)" type="button" class="searchButton" value="Go" id="doSearch"/></center></fieldset></form></div><div id="searchResults"><center/></div><p class="searchHighlight"><a href="#" onclick="toggleHighlight()">Search Highlighter (On/Off)</a></p></div></div></div></div><script type="text/javascript" src="../common/jquery/jquery.qtip-1.0.0-rc3/jquery.qtip-1.0.0-rc3.min.js"><!--jQuery plugin for glossary popups. -->
+                   $('a[title]').qtip({ style: { name: 'cream', tip: true } })
+                </script></body></html>
