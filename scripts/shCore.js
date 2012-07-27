@@ -159,7 +159,7 @@ var sh = {
 		{
 			return '<div class="newtoolbar2"> '+
 			//'<a class="item" href="#"> '+
-			'<img src="images/icon_clipboard.png" alt="Select Text" title="Select Text" height="20" width="20" align="right" onclick="highlightCode(event);" /> '+
+			//'<img src="images/icon_clipboard.png" alt="Select Text" title="Select Text" height="20" width="20" align="right" onclick="highlightCode(event);" /> '+
 			//'</a> '+
 			'</div>';
 			
@@ -1587,7 +1587,7 @@ sh.Highlighter.prototype = {
 						+ '<tr>'
 							+ (gutter ? '<td class="gutter">' + this.getLineNumbersHtml(code) + '</td>' : '')
 							+ '<td class="code">'
-								+ '<div class="container">'
+								+ '<div class="container" title="Hint: Double Click to Select Code">'
 									+ html
 								+ '</div>'
 							+ '</td>'
