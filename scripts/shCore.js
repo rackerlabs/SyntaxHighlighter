@@ -1527,6 +1527,7 @@ sh.Highlighter.prototype = {
         //Replace mark bold with special characters
         code=code.replace(/<span\s+?class\s*?\=\s*?(\")??bold(\")??(.|\n|\r|\f)+?<strong>(.+?)<\/strong>(.)*?<\/span>/ig,'!!!!$4!bold!!!!');
         code=code.replace(/<span\s+?class\s*?\=\s*?(\")??emphasis(\")??(.|\n|\r|\f)+?<em>(.+?)<\/em>(.)*?<\/span>/ig,'!!!!$4!italic!!!!');
+        code=code.replace(/<span\s+?class\s*?\=\s*?(\")??highlight(\")??(.|\n|\r|\f)+?>(.+?)<\/span>/ig,"!!!!$4!highlight!!!!");
         code=code.replace(/<em\s+?class\s*?\=\s*?(\")??replaceable(\")??(.|\n|\r|\f)+?<code>(.+?)<\/code>(.)*?<\/em>/ig,'!!!!$4!italic!!!!');
 
 
